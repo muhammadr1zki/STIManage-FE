@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# job-manageement-fe
+# STImanage Frontend
 Frontend STIManage Project
 =======
 # Vuetify (Default)
