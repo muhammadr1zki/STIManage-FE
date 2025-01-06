@@ -77,7 +77,7 @@ const successMessage = ref("");
 const showPassword = ref(false);
 
 // API Endpoint
-const registrationEndpoint = "http://localhost:3000/api/v1/registration";
+const registrationEndpoint = "https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/registration";
 
 // Clear Error Message for a specific field
 const clearError = (field) => {

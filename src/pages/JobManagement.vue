@@ -514,7 +514,7 @@ export default {
         return;
       }
 
-      fetch(`http://localhost:3000/api/v1/task/${this.deleteDialog.taskId}`, {
+      fetch(`https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/task/${this.deleteDialog.taskId}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -577,7 +577,7 @@ export default {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/v1/tasks", {
+        const response = await fetch("https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/tasks", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -617,7 +617,7 @@ export default {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/v1/tasks/summary", {
+        const response = await fetch("https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/tasks/summary", {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -692,7 +692,7 @@ export default {
 
       // Make the API call
       try {
-        const response = await fetch("http://localhost:3000/api/v1/task", {
+        const response = await fetch("https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/task", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -733,7 +733,7 @@ export default {
 
         try {
           const response = await fetch(
-            `http://localhost:3000/api/v1/task/${this.selectedTask.id}`,
+            `https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/task/${this.selectedTask.id}`,
             {
               method: "PATCH",
               headers: {
@@ -773,7 +773,7 @@ export default {
 
       try {
         const response = await fetch(
-          `http://localhost:3000/api/v1/task/${item.id}`,
+          `https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/task/${item.id}`,
           {
             method: "GET",
             headers: {
@@ -824,7 +824,7 @@ export default {
       }
 
       // Make API call to download the file
-      fetch("http://localhost:3000/api/v1/tasks/download", {
+      fetch("https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/tasks/download", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -868,7 +868,7 @@ export default {
     async logout() {
 
       try {
-        const response = await fetch('http://localhost:3001/api/v1/logout', {
+        const response = await fetch('https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/logout', {
           // method: 'POST',
           headers: {
             'Content-Type': 'application/json',

@@ -96,7 +96,7 @@ const handleLogin = async () => {
   // Validate Form before submission
   if (!validateForm()) return;
 
-  const loginEndpoint = "http://localhost:3000/api/v1/login";
+  const loginEndpoint = "https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/login";
 
   try {
     const response = await fetch(loginEndpoint, {
