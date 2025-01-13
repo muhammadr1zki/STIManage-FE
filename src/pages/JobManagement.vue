@@ -363,7 +363,7 @@ export default {
       dataTable: [],
       taskCounts: reactive({
         total_task: 0,
-        task_todo: 6,
+        task_todo: 0,
         task_doing: 0,
         task_ready_to_qa: 0,
         task_failed: 0,
@@ -866,10 +866,9 @@ export default {
     },
 
     async logout() {
-
       try {
         const response = await fetch('https://stimanage-api-154213985245.asia-southeast2.run.app/api/v1/logout', {
-          // method: 'POST',
+          method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem("token")}`
@@ -877,18 +876,22 @@ export default {
         });
 
         if (!response.ok) {
-          throw new Error('Gagal logout dari server');
+          const errorData = await response.json();
+          throw new Error(errorData.message || 'Gagal logout dari server');
         }
 
-        // Jika logout berhasil, hapus token dari localStorage
+        // Hapus token dari localStorage
         localStorage.removeItem("token");
 
         // Redirect ke halaman login
         this.$router.push("/login");
       } catch (error) {
-        // console.error('Error saat logout:', error);
+        console.error('Error saat logout:', error.message);
+        // Contoh: Tampilkan pesan error ke pengguna
+        alert('Gagal logout. Silakan coba lagi.');
       }
     },
+
 
     // Toggle all checkboxes
     toggleCheckAll() {
